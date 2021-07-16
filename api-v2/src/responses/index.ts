@@ -5,3 +5,5 @@ export * from './GetChargesResponse';
 export * from './GetListResponse';
 export * from './CreateChargeResponse';
 export * from './PaymentPayResponse';
+export * from './PixRefundChargeResponse';
+export * from './PixQRCodeResponse';

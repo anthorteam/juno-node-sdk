@@ -13,7 +13,8 @@ import {
   DigitalAccountResource,
   NotificationsResource,
   TransfersResource,
-  PaymentResource
+  PaymentResource,
+  PixResource
 } from '../resources';
 import { DocumentResource } from '../resources/DocumentResource';
 import { BaseResourceConstructor } from '../resources/BaseResource';
@@ -32,6 +33,8 @@ export class JunoSDK {
   private readonly _notifications: NotificationsResource;
   private readonly _transfers: TransfersResource;
   private readonly _payment: PaymentResource;
+  private readonly _pix: PixResource;
+
 
 
   constructor(config?: JunoSDKConfig) {
@@ -62,6 +65,8 @@ export class JunoSDK {
     this._notifications = new NotificationsResource(resourceConstructor);
     this._transfers = new TransfersResource(resourceConstructor);
     this._payment = new PaymentResource(resourceConstructor);
+    this._pix = new PixResource(resourceConstructor);
+
   }
 
   private static mergeConfigWithEnvironment(config: JunoSDKConfig) {
@@ -177,5 +182,8 @@ export class JunoSDK {
   
   get payment() {
     return this._payment;
+  }
+  get pix() {
+    return this._pix;
   }
 }
